@@ -1,0 +1,32 @@
+.DS_Store
+
+# TeX cruft
+*.aux
+*.blg
+*.bbl
+*.bcf
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+proposal.pdf
+*.run.xml
+*.synctex.gz
+
+# R cruft
+.Rhistory
+*.Rproj
+*.R~
+
+# Python cruft
+__pycache__/
+*.pyc
+*.py~
+.pytest_cache/
+
+# Editor cruft
+.idea/
+.vscode/
