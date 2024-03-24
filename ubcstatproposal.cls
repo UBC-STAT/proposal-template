@@ -1,4 +1,3 @@
-
 % UBC Statistics proposal template
 % Daniel J. McDonald 2024
 % building on
@@ -7,7 +6,7 @@
 % article
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{ubcstatthesis}[2024/03/23 ubcstatproposal]
+\ProvidesClass{ubcstatproposal}[2024/03/23 ubcstatproposal]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 
@@ -51,6 +50,7 @@
   {\normalfont B\kern-.05em{\scshape i\kern-.025em b}\kern-.08em \TeX}%
 }
 
+
 % Note: Change to \RequirePackage[hidelinks,final]{hyperref} for printing in
 % B&W, to avoid unsightly boxes
 \RequirePackage[final]{hyperref}
@@ -78,7 +78,7 @@
 \RequirePackage{natbib}
 
 \RequirePackage[margin=2.5cm]{geometry} % pass tells it not to mess with the layout
-
+\setlength{\headheight}{15pt}
 % PDF metadata
 \AtBeginDocument{%
   
