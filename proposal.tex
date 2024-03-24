@@ -1,4 +1,4 @@
-\documentclass[draft]{cmustatproposal} % remove draft option when done
+\documentclass[draft]{ubcstatproposal} % remove draft option when done
 
 \title{Your Document Title}
 \author{Your Name}
@@ -15,7 +15,6 @@
 
 % Choose one:
 \documenttype{Thesis Proposal} % for thesis proposals
-% \documenttype{Advanced Data Analysis Project Report} % for ADA reports
 
 % If your title is very long, it may not fit in the page headers. You can define
 % a short version for those:
@@ -24,7 +23,7 @@
 % The default font is Latin Modern, aka Computer Modern. You may choose a
 % different font by uncommenting one of the following lines. All of these
 % options include matching mathematics fonts.
-% \usepackage{libertinus} % Libertinus (requires recent LaTeX from 2019 or newer)
+% \usepackage{libertinus} % Libertinus (requires LaTeX from 2019 or newer)
 % \usepackage{stix2} % STIX Two (also requires recent LaTeX)
 % \usepackage{newtxtext,newtxmath} % Times New Roman style font
 % \usepackage{newpxtext,newpxmath} % New PX, based on Palatino
@@ -37,17 +36,17 @@
 \begin{document}
 \maketitle
 
+
 \begin{abstract}
   Provide an abstract here. A good abstract is concise, self-contained, and
-  readable by any member of the department (and by your outside advisors, for
-  ADA reports!).
+  readable by any member of the department.
 \end{abstract}
 
 \section{Introduction}
 
-This is a template for ADA reports and thesis proposals in the Department of
-Statistics \& Data Science at Carnegie Mellon University. Students should also
-read the Ph.D.\ handbook for details on the expected contents of reports and
+This is a template for thesis proposals in the Department of Statistics at The
+University of British Columbia. Students should also read the Comprehensive
+Examination Guidelines for details on the expected contents of reports and
 proposals, as well as the requirements for the presentations and timeline.
 
 This template requires a basic knowledge of \LaTeX\ and should cover the basic
@@ -63,25 +62,31 @@ useful resources if you need \LaTeX\ help:
   characters, and so on.
 \end{itemize}
 
-We recommend using BibTeX for your references. This template is set up to use
+We recommend using \BibTeX\ for your references. This template is set up to use
 \href{http://mirrors.ctan.org/macros/latex/contrib/natbib/natbib.pdf}{the natbib
   package} for bibliography management, using the ``apalike'' reference style.
 You can adjust this to any referencing format you prefer.
 
-The \texttt{proposal-references.bib} file contains some example BibTeX entries.
+The \texttt{proposal-references.bib} file contains some example \BibTeX\ entries.
 To cite, use the \verb|\citet| command to use a reference in a sentence, and use
 \verb|\citep| for a parenthetical citation. For example, \citet{Wasserman:2004}
 is a common statistics reference, and I've cited it here with \verb|\citet|.
 Alternately, we often put references in parentheses using \verb|\citep|
 \citep{Underhill:1999}.
 
-Figures, such as Fig.~\ref{label}, go into the \texttt{figures/} folder.
+Here's some dummy text to push the figure down. \lipsum[2]
+
+Figures, such as Fig.~\ref{fig:label}, go into the \texttt{figures/} folder. This
+template uses the \verb|cleverref| package so that you can do things like
+\verb|\cref{fig:label}| to produce \cref{fig:label}. For more details, see 
+\href{https://ctan.mirror.globo.tech/macros/latex/contrib/cleveref/cleveref.pdf}%
+{https://ctan.mirror.globo.tech/macros/latex/contrib/cleveref/cleveref.pdf}.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.3\textwidth]{fig02a-circle}
   \caption{Sample caption.}
-  \label{label}
+  \label{fig:label}
 \end{figure}
 
 Given a general quadratic of the form $ax^2 + bx + c$, the roots may be found by
@@ -95,7 +100,7 @@ the quadratic formula,
 If you have a figure or table that does not fit in a normal-sized page, such as
 a very wide table with many columns, you can create a landscape page. The
 landscape page is rotated (11 inches wide and 8.5 inches tall, instead of the
-reverse), so wide things fit in it.
+reverse), so wide things fit in it. This is ugly however and best avoided.
 
 The \verb|landscapepage| environment does this. Simply place your figure or
 table environment inside a \verb|landscapepage| environment and it will appear
@@ -137,10 +142,12 @@ all the way to the edge of the page.
 These section headings are meant only as a rough outline for thesis proposals;
 you can determine the structure of your proposal however you and your advisors
 feel is appropriate, provided it meets the requirements in the Ph.D.\ handbook.
-ADA reports should follow the IMRAD structure referenced in the handbook.
+
 
 \section{Timeline}
 
+\bibliographystyle{apalike} % bibliography style - recommend using apalike-doi
+% as it hyperlinks DOIs
 \bibliography{proposal-references}
 
 \end{document}

@@ -1,20 +1,25 @@
-% CMU Statistics & Data Science proposal and ADA report template, building on
+
+% UBC Statistics proposal template
+% Daniel J. McDonald 2024
+% building on
+% CMU Statistics & Data Science proposal and ADA report template
+%   Alex Reinhart, 2022
 % article
-% Alex Reinhart, 2022
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{cmustatthesis}[2022/09/03 cmustatproposal]
+\ProvidesClass{ubcstatthesis}[2024/03/23 ubcstatproposal]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 
 \ProcessOptions
 
-\LoadClass[11pt,letterpaper,twoside]{article}
+\LoadClass[12pt,letterpaper,twoside]{article}
 
 % Math packages
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
+\RequirePackage{lipsum}
 
 % define theorem, corollary, lemma, and definition environments
 \theoremstyle{plain}
@@ -37,48 +42,60 @@
 \RequirePackage{fancyhdr}
 
 % Figure caption styles: sans-serif, with label "Figure N" italicized
-\RequirePackage[font=sf,labelfont=it]{caption}
+% \RequirePackage[font=sf,labelfont=it]{caption}
 
 % Provide a shorttitle command for page headings, in case their title is too
 % long
 \newcommand{\shorttitle}[1]{\def\@shorttitle{#1}}
+\DeclareRobustCommand{\BibTeX}{%
+  {\normalfont B\kern-.05em{\scshape i\kern-.025em b}\kern-.08em \TeX}%
+}
 
 % Note: Change to \RequirePackage[hidelinks,final]{hyperref} for printing in
 % B&W, to avoid unsightly boxes
 \RequirePackage[final]{hyperref}
+\hypersetup{%
+    bookmarksnumbered=true,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={Department of Statistics, The University of British Columbia},
+    pdfpagelayout=SinglePage,
+    bookmarksopen=False,
+    colorlinks=true,
+    linkcolor=Blue,
+    urlcolor=Blue,
+    citecolor=Cerulean
+  }
+\RequirePackage[capitalize,nameinlink]{cleveref}
+
+% Make some colours available
+\RequirePackage[dvipsnames]{xcolor}
 
 \RequirePackage[final]{graphicx}
 \graphicspath{ {figures/} } % specify the path where figures are located
 
 % Bibliography
 \RequirePackage{natbib}
-\bibliographystyle{apalike} % bibliography style - recommend using apalike-doi
-% as it hyperlinks DOIs
+
+\RequirePackage[margin=2.5cm]{geometry} % pass tells it not to mess with the layout
 
 % PDF metadata
 \AtBeginDocument{%
-  \hypersetup{%
-    bookmarksnumbered=true,
-    pdftitle={\@title},
-    pdfauthor={\@author},
-    pdfsubject={Department of Statistics and Data Science, Carnegie Mellon University},
-    pdfpagelayout=SinglePage,
-    bookmarksopen=False
-  }
-
+  
     % Page headers
   \pagestyle{fancy}
   \fancyhead{}
 
+  \fancyhead[CE]{\textit{\@author}}
   \ifdefined\@shorttitle
     \fancyhead[CO]{\textit{\@shorttitle}}
   \else
     \fancyhead[CO]{\textit{\@title}}
   \fi
 
-  \fancyhead[CE]{\textit{\@author}}
+  
 
-  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[RE,RO]{\thepage}
 
   \renewcommand{\headrulewidth}{0pt}
 
@@ -89,7 +106,8 @@
     \fancyfoot{}
   }
 
-  \thispagestyle{plain}
+  \thispagestyle{empty}
+  
 }
 
 % Fancypants logic
@@ -111,8 +129,11 @@
   {
     \raggedright
     \begin{center}
-      \includegraphics[width=3.5in]{cmu-wordmark-horizontal-r.pdf} \\
-      {\Large Department of Statistics \& Data Science}\\[4ex]
+
+      \vspace*{2.5cm}
+
+      \includegraphics[width=3.5in]{ubc-logo-2018-wordmark-blue282-pms.pdf} \\
+      {\Large Department of Statistics}\\[4ex]
       {\Large \thedocumenttype}\\[4ex]
       \ifdraft{\draftmark\\}{}
 
@@ -145,10 +166,10 @@
 }
 
 % Support large landscape tables
-\RequirePackage[pass]{geometry} % pass tells it not to mess with the layout
 \RequirePackage{pdflscape}
 \newenvironment{landscapepage}[1][1in]{%
   \newgeometry{margin=#1}%
   \begin{landscape}}{%
   \end{landscape}%
   \restoregeometry}
+
