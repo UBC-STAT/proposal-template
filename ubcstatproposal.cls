@@ -20,14 +20,6 @@
 \RequirePackage{amssymb}
 \RequirePackage{lipsum}
 
-% define theorem, corollary, lemma, and definition environments
-\theoremstyle{plain}
-\newtheorem*{theorem*}{Theorem}
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}[theorem]{Definition}
-
 % Fonts
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern} % default to Latin Modern for better character support
@@ -66,10 +58,10 @@
     urlcolor=Blue,
     citecolor=Cerulean
   }
-\RequirePackage[capitalize,nameinlink]{cleveref}
+\RequirePackage[capitalize,sort,compress]{cleveref}
 
 % Make some colours available
-\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[usenames,dvipsnames]{xcolor}
 
 \RequirePackage[final]{graphicx}
 \graphicspath{ {figures/} } % specify the path where figures are located

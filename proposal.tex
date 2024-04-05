@@ -1,4 +1,16 @@
 \documentclass[draft]{ubcstatproposal} % remove draft option when done
+ % \usepackage{shortex} add this if you like, https://github.com/trevorcampbell/shortex.git
+
+% define theorem, corollary, lemma, and definition environments
+\theoremstyle{plain}
+\makeatletter
+\@ifundefined{theorem*}{\newtheorem*{theorem*}{Theorem}}{}
+\@ifundefined{theorem}{\newtheorem{theorem}{Theorem}}{}
+\@ifundefined{corollary}{\newtheorem{corollary}[theorem]{Corollary}}{}
+\@ifundefined{lemma}{\newtheorem{lemma}[theorem]{Lemma}}{}
+\@ifundefined{definition}{\newtheorem{definition}[theorem]{Definition}}{}
+\makeatother
+
 
 \title{Your Document Title}
 \author{Your Name}
@@ -78,9 +90,10 @@ Here's some dummy text to push the figure down. \lipsum[2]
 
 Figures, such as Fig.~\ref{fig:label}, go into the \texttt{figures/} folder. This
 template uses the \verb|cleverref| package so that you can do things like
-\verb|\cref{fig:label}| to produce \cref{fig:label}. For more details, see 
+\verb|\cref{fig:label}| to produce \cref{fig:label}. For more details, see
 \href{https://ctan.mirror.globo.tech/macros/latex/contrib/cleveref/cleveref.pdf}%
-{https://ctan.mirror.globo.tech/macros/latex/contrib/cleveref/cleveref.pdf}.
+{the \texttt{cleveref} manual}. You may also wish to consider using 
+\href{https://github.com/trevorcampbell/shortex.git}{Shor\TeX}.
 
 \begin{figure}
   \centering
